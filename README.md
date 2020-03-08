@@ -1,3 +1,3 @@
 # deep-learning-ng-note
-This project is a record of my study of deep learning course of NG
+This project is a record of my study of deep learning course of NG \n
 .docx files are my personal notes
