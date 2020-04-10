@@ -33,8 +33,8 @@ $ catkin_make
 ```Bash  
 $./env.sh  
 ```  
-4.1 If any errors happen, see inside 'omni_pacakges/README.md' for manual installation guidance  
-OpenHaptic SDK is in 'omni_packages/OpenHapticsAE_Linux_v3_0' or can be downloaded here https://github.com/fsuarez6/phantom_omni/releases
+* 4.1 If any errors happen, see inside 'omni_pacakges/README.md' for manual installation guidance  
+* OpenHaptic SDK is in 'omni_packages/OpenHapticsAE_Linux_v3_0' or can be downloaded here https://github.com/fsuarez6/phantom_omni/releases
 
 5. Hyperion API is in 'hyperion_mixed/script', which you do not need to install manually.  
 6. Test
