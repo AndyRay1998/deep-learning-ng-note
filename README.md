@@ -43,17 +43,24 @@ $ ./env.sh
 ```Bash  
 $ roslaunch omni_common omni.launch  
 ```  
-After that, you still need to see http://fsuarez6.github.io/projects/geomagic-touch-in-ros/ for more information.  
+7. After that, you still need to see http://fsuarez6.github.io/projects/geomagic-touch-in-ros/ for more information.  
   
 ## Scripting Languages  
 This workspace include both .cpp and .py executable files for flexibility and robustness.  
 The default language is c++ because of its high effectiveness.  
+NOTE that at present galil ,hyperion and YAMAHA (serial port) provide c++ support.  
   
 ## Usage of roslaunch - Entrance of Project
-NOTE that at present galil ,hyperion and YAMAHA (serial port) provide c++ support.  
-Use  ```Bash $roslaunch galil_mixed eye_op_robot.launch``` to evoke .cpp executable files  
-And  $roslaunch galil_mixed eye_op_robot.launch file_suffix:=.py   to evoke .py executable files  
-
+There are five parameters designed - ```yamaha_address, yamaha_freq, yamaha_timeout``` for YAMAHA serial communication; ```hyperion_address``` for Hyperion device connection; ```file_suffix``` for programming language selection. All of them have a default value.  
+e.g.  
+Evoke .cpp executable files:  
+```Bash  
+$ roslaunch galil_mixed eye_op_robot.launch  
+```  
+Evoke .py executable files:  
+```Bash  
+$ roslaunch galil_mixed eye_op_robot.launch file_suffix:=.py  
+```  
 Check "eye_op_common/launch/eye_op_robot.launch" for source code.  
 
 
