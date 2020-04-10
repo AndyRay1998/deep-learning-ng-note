@@ -28,15 +28,17 @@ numpy 1.15.1
 $ cd eye_op_robot_mixed  
 $ source devel/setup.bash  
 $ catkin_make  
-// Test ROS communication  
+```  
+   Test ROS communication  
+```Bash  
 $ roslaunch eye_op_common eye_op_robot.launch  
 ```  
 4. Try auto installation of Omni Phantom API if you are using 64-bit system  
 ```Bash  
 $ ./env.sh  
 ```  
-* 4.1 If any errors happen, see inside 'omni_pacakges/README.md' for manual installation guidance.  
-* OpenHaptic SDK is in 'omni_packages/OpenHapticsAE_Linux_v3_0' or can be downloaded here https://github.com/fsuarez6/phantom_omni/releases .  
+* 4.1 If any errors happen, see inside ```omni_pacakges/README.md``` for manual installation guidance.  
+* OpenHaptic SDK is in ```omni_packages/OpenHapticsAE_Linux_v3_0``` or can be downloaded here https://github.com/fsuarez6/phantom_omni/releases .  
 
 5. Hyperion API is in 'hyperion_mixed/src', which you do not need to install manually.  
 6. Test Omni API  
@@ -62,22 +64,23 @@ Evoke .py executable files:
 $ roslaunch galil_mixed eye_op_robot.launch file_suffix:=.py  
 ```  
 Check "eye_op_common/launch/eye_op_robot.launch" for source code.  
-
-
-# Python Import Tips
-In file "galil_overall_listener.py", we "import gclib_python.example". 
-This syntax is possible only if there is a "__init__.py" file in folder "gclib_python". 
-The same applies to "from . import gclib" in "example.py".
-
-
-# Version Control
-Add "add_definitions(-std=c++11)" to the first line of CMakeLists.txt for compilation. It is version control for c++.
-All .py files add #!usr/bin/env python3 for version control.
-
-
+  
+## Python Import Tips  
+In file "galil_overall_listener.py", we "import gclib_python.example".  
+This syntax is possible only if there is a "__init__.py" file in folder "gclib_python".  
+The same applies to "from . import gclib" in "example.py".  
+  
+## Version Control  
+Add ```add_definitions(-std=c++11)`` to the first line of CMakeLists.txt for compilation. It is version control for c++.  
+All .py files add ```#!usr/bin/env python3``` for version control.  
+  
 # File Structure
-'omni_packages' is not a ROS package, but those four folders inside it are. 'omni_packages' is just for better file structure.
-"eye_op_robot_mixed" is the name of the whole workspace. PLZ rename it manually after download.
+There are five folders inside ```src```.  
+```eye_op_common``` is for shared scripts, including foward and inverse kinematic and jacobian calculation script.  
+```hyperion_mixed``` is for Hyperion device. API locates in ```src``` and executable scripts are in ```script```.  
+```galil_mixed``` is for Galil motion control card. API locates in ```src``` and executable scripts are in ```script```.  
+```yamaha_mixed``` is for Galil motion control card. API locates in ```src``` and executable scripts are in ```script```.  
+```omni_packages``` is not a ROS package itself, but those four folders inside it are. 'omni_packages' is just for better file structure. And those four packages inside are Omni API that you should have installed following previous instruction.  
 
 ## License
 This project is released under MIT license.  
