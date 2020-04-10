@@ -21,18 +21,26 @@ ROS-kinetic
 numpy 1.15.1  
   
 ## Installation
-Create a folder named 'eye_op_robot_mixed' or whatever you prefer  
-Download and extract all files into 'eye_op_robot_mixed'  
-Source the project:  
+1. Create a folder named 'eye_op_robot_mixed' or whatever you prefer  
+2. Download and extract all files into 'eye_op_robot_mixed'  
+3. Source and compile the workspace:  
 ```Bash  
 $ cd eye_op_robot_mixed  
 $ source devel/setup.bash  
+$ catkin_make
 ```  
+4. Try auto installation of Omni Phantom API if you are using 64-bit system  
+```Bash  
+$./env.sh  
+```  
+4.1 If any errors happen, see inside 'omni_pacakges/README.md' for manual installation guidance  
+OpenHaptic SDK is in 'omni_packages/OpenHapticsAE_Linux_v3_0' or can be downloaded here https://github.com/fsuarez6/phantom_omni/releases
 
-Omni phantom API is inside folder 'omni_packages'. See 'omni_packages/README.md' for installation guidance.
-OpenHaptic SDK is in 'omni_packages/OpenHapticsAE_Linux_v3_0' or can be downloaded here: https://github.com/fsuarez6/phantom_omni/releases
-Try $./env.sh under the path of "~/eye_op_robot_mixed" for automatic API installation first if you are using 64-bit system.
-Hyperion API is in 'hyperion_mixed/script', which you do not need to install manually.
+5. Hyperion API is in 'hyperion_mixed/script', which you do not need to install manually.  
+6. Test
+```Bash  
+$ roslaunch eye_op_common eye_op_robot.launch  
+```  
   
 # Scripting Languages
 This workspace include both .cpp and .py executable files for flexibility and robustness, 
