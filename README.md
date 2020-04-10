@@ -27,31 +27,34 @@ numpy 1.15.1
 ```Bash  
 $ cd eye_op_robot_mixed  
 $ source devel/setup.bash  
-$ catkin_make
+$ catkin_make  
+// Test ROS communication  
+$ roslaunch eye_op_common eye_op_robot.launch  
 ```  
 4. Try auto installation of Omni Phantom API if you are using 64-bit system  
 ```Bash  
-$./env.sh  
+$ ./env.sh  
 ```  
-* 4.1 If any errors happen, see inside 'omni_pacakges/README.md' for manual installation guidance  
-* OpenHaptic SDK is in 'omni_packages/OpenHapticsAE_Linux_v3_0' or can be downloaded here https://github.com/fsuarez6/phantom_omni/releases
+* 4.1 If any errors happen, see inside 'omni_pacakges/README.md' for manual installation guidance.  
+* OpenHaptic SDK is in 'omni_packages/OpenHapticsAE_Linux_v3_0' or can be downloaded here https://github.com/fsuarez6/phantom_omni/releases .  
 
-5. Hyperion API is in 'hyperion_mixed/script', which you do not need to install manually.  
-6. Test
+5. Hyperion API is in 'hyperion_mixed/src', which you do not need to install manually.  
+6. Test Omni API  
 ```Bash  
-$ roslaunch eye_op_common eye_op_robot.launch  
+$ roslaunch omni_common omni.launch  
 ```  
+After that, you still need to see http://fsuarez6.github.io/projects/geomagic-touch-in-ros/ for more information.  
   
-# Scripting Languages
-This workspace include both .cpp and .py executable files for flexibility and robustness, 
-and the default language is c++ because of its high effectiveness.
+## Scripting Languages  
+This workspace include both .cpp and .py executable files for flexibility and robustness.  
+The default language is c++ because of its high effectiveness.  
+  
+## Usage of roslaunch - Entrance of Project
+NOTE that at present galil ,hyperion and YAMAHA (serial port) provide c++ support.  
+Use  ```Bash $roslaunch galil_mixed eye_op_robot.launch``` to evoke .cpp executable files  
+And  $roslaunch galil_mixed eye_op_robot.launch file_suffix:=.py   to evoke .py executable files  
 
-
-# Usage of roslaunch
-NOTE that at present galil ,hyperion and YAMAHA (serial port) provide c++ support.
-Use  $roslaunch galil_mixed eye_op_robot.launch                    to evoke .cpp executable files
-and  $roslaunch galil_mixed eye_op_robot.launch file_suffix:=.py   to evoke .py executable files
-For more args, see the .launch file in "eye_op_common/launch".
+Check "eye_op_common/launch/eye_op_robot.launch" for source code.  
 
 
 # Python Import Tips
@@ -69,5 +72,7 @@ All .py files add #!usr/bin/env python3 for version control.
 'omni_packages' is not a ROS package, but those four folders inside it are. 'omni_packages' is just for better file structure.
 "eye_op_robot_mixed" is the name of the whole workspace. PLZ rename it manually after download.
 
-
+## License
+This project is released under MIT license.  
+See LICENSE.md for further information.  
 
