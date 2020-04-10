@@ -2,26 +2,38 @@
 This project tries to develop a flexible and modular platform for researches into ophthalmic operation robot based on ROS.  
 At present, it only provides a good software frame but not wholistic and systematic functions from input to output.  
   
-# Getting Started  
+## Getting Started
 The following content will help you deploy this project to your PC smoothly.  
 Please read carefully.  
   
+## Author Info
+Unit: Beihang University, Beijing, China  
+Name: Changyi Lei  
+Email1: 1998andyray@gmail.com  
+Email2: andyray1998@qq.com  
+Github URL: https://github.com/AndyRay1998  
+  
+## Environment Requirements
+ubuntu 16.04 64bits  
+python 3.7.0 (default)  
+python 2.7.17 (for ROS)  
+ROS-kinetic  
+numpy 1.15.1  
+  
+## Installation
+Create a folder named 'eye_op_robot_mixed' or whatever you prefer  
+Download and extract all files into 'eye_op_robot_mixed'  
+Source the project:  
+```Bash  
+$ cd eye_op_robot_mixed  
+$ source devel/setup.bash  
+```  
 
-# Author Info
-Unit: Beihang University, Beijing, China
-Name: Changyi Lei
-Email: 1998andyray@gmail.com
-Github URL: https://github.com/AndyRay1998
-
-
-# Environment
-ubuntu 16.04 64bits
-python 3.7.0 (default)
-python 2.7.17 (for ROS)
-ROS-kinetic
-numpy 1.15.1
-
-
+Omni phantom API is inside folder 'omni_packages'. See 'omni_packages/README.md' for installation guidance.
+OpenHaptic SDK is in 'omni_packages/OpenHapticsAE_Linux_v3_0' or can be downloaded here: https://github.com/fsuarez6/phantom_omni/releases
+Try $./env.sh under the path of "~/eye_op_robot_mixed" for automatic API installation first if you are using 64-bit system.
+Hyperion API is in 'hyperion_mixed/script', which you do not need to install manually.
+  
 # Scripting Languages
 This workspace include both .cpp and .py executable files for flexibility and robustness, 
 and the default language is c++ because of its high effectiveness.
@@ -50,8 +62,4 @@ All .py files add #!usr/bin/env python3 for version control.
 "eye_op_robot_mixed" is the name of the whole workspace. PLZ rename it manually after download.
 
 
-# About API
-Omni phantom API is inside folder 'omni_packages'. See 'omni_packages/README.md' for installation guidance.
-OpenHaptic SDK is in 'omni_packages/OpenHapticsAE_Linux_v3_0' or can be downloaded here: https://github.com/fsuarez6/phantom_omni/releases
-Try $./env.sh under the path of "~/eye_op_robot_mixed" for automatic API installation first if you are using 64-bit system.
-Hyperion API is in 'hyperion_mixed/script', which you do not need to install manually.
+
