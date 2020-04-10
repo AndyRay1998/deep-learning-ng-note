@@ -13,7 +13,7 @@ Email1: 1998andyray@gmail.com
 Email2: andyray1998@qq.com  
 Github URL: https://github.com/AndyRay1998  
   
-## Environment Requirements
+## Test Environment  
 ubuntu 16.04 64bits  
 python 3.7.0 (default)  
 python 2.7.17 (for ROS)  
@@ -53,7 +53,11 @@ The default language is c++ because of its high effectiveness.
 NOTE that at present galil ,hyperion and YAMAHA (serial port) provide c++ support.  
   
 ## Usage of roslaunch - Entrance of Project
-There are five parameters designed - ```yamaha_address, yamaha_freq, yamaha_timeout``` for YAMAHA serial communication; ```hyperion_address``` for Hyperion device connection; ```file_suffix``` for programming language selection. All of them have a default value.  
+There are five parameters designed :  
+* `yamaha_address, yamaha_freq, yamaha_timeout` for YAMAHA serial communication;  
+* `hyperion_address` for Hyperion device connection;  
+* `file_suffix` for programming language selection.  
+All of them have a default value.  
 e.g.  
 Evoke .cpp executable files:  
 ```Bash  
@@ -66,12 +70,12 @@ $ roslaunch galil_mixed eye_op_robot.launch file_suffix:=.py
 Check "eye_op_common/launch/eye_op_robot.launch" for source code.  
   
 ## Python Import Tips  
-In file "galil_overall_listener.py", we "import gclib_python.example".  
-This syntax is possible only if there is a "__init__.py" file in folder "gclib_python".  
+In file `galil_overall_listener.py`, we `import gclib_python.example`.  
+This syntax is possible only if there is a `__init__.py` file in folder `gclib_python`.  
 The same applies to "from . import gclib" in "example.py".  
   
 ## Version Control  
-Add ```add_definitions(-std=c++11)`` to the first line of CMakeLists.txt for compilation. It is version control for c++.  
+Add `add_definitions(-std=c++11)` to the first line of `CMakeLists.txt` for compilation. It is version control for c++.  
 All .py files add ```#!usr/bin/env python3``` for version control.  
   
 # File Structure
